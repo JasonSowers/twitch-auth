@@ -14,14 +14,8 @@ function App() {
 
         <div>
         <TwitchLoginButton onClick={async () => {
-            await fetch("https://twitch-alexa-api.azurewebsites.net/api/login?code=YzU4HHx0x33ahMrjpvoLBvWh0113jO07BeuXjzWg7LENfd25ovc2HA==")
-            .then((body) => {
-              body.text().then((result) => {window.open(result, 'Authorize', ' scrollbars=yes,menubar=no,width=500, resizable=yes,toolbar=no,location=no,status=no')});              
-            }) 
-            .catch((err) => {
-              console.log(err)
-            })          
-
+       let params = (new URL(document.location)).searchParams;
+       window.open("https://id.twitch.tv/oauth2/authorize" + window.location.query, 'Authorize', ' scrollbars=yes,menubar=no,width=500, resizable=yes,toolbar=no,location=no,status=no')
 
         }}/>
   </div>
