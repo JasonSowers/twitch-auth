@@ -14,6 +14,8 @@ function App() {
 
         <div>
         <TwitchLoginButton onClick={async () => {
+      let redirectUrl = getParameterByName("redirect_uri"); 
+       let newQury = window.location.query.replace(redirectUrl, )
        let params = (new URL(document.location)).searchParams;
        window.open("https://id.twitch.tv/oauth2/authorize" + window.location.query, 'Authorize', ' scrollbars=yes,menubar=no,width=500, resizable=yes,toolbar=no,location=no,status=no')
 
