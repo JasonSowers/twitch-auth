@@ -3,14 +3,18 @@ import alexaLogo from './images/vertical_RGB_color_whitetext.png';
 import twitchLogo from './images/TwitchExtrudedWordmarkPurple.png';
 import './App.css';
 import TwitchLoginButton from "./components/TwitchLoginButton.js";
+import { AmazonLoginButton } from "react-social-login-buttons";
 
 
 
 function App() {
 
   var componentDidMount = () => {
-    if (window.location.hash){console.log("loaded!");}
-    fetch("https://pitangui.amazon.com/spa/skill/account-linking-status.html?vendorId=MV7KPZEZZT1ZT"+window.location.hash)
+    if (window.location.hash){
+      console.log("loaded!");
+      fetch("https://pitangui.amazon.com/spa/skill/account-linking-status.html?vendorId=MV7KPZEZZT1ZT"+window.location.hash);
+    }
+    
   }
 
   componentDidMount();
@@ -30,6 +34,7 @@ function App() {
        window.open("https://id.twitch.tv/oauth2/authorize" + newQuery, 'Authorize', ' scrollbars=yes,menubar=no,width=500, resizable=yes,toolbar=no,location=no,status=no')
 
         }}/>
+<AmazonLoginButton></AmazonLoginButton>
   </div>
       </header>
     </div>
